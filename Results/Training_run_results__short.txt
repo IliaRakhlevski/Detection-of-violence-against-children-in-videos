@@ -1,0 +1,1083 @@
+==================================================== Training 1 =============================================================================================================
+
+===================  Loading data  ===================  
+
+
+/kaggle/input/videodata/video_data/ ['WithViolence', 'NoViolence']
+
+-----------------------------------------------------------------------------------------------------
+
+Training:
+
+Number of items: 7690 
+
+/kaggle/input/videodata/video_data/WithViolence/127___1005_1025.mp4 - 0
+/kaggle/input/videodata/video_data/WithViolence/35___200_220.mp4 - 0
+/kaggle/input/videodata/video_data/NoViolence/114___1860_1880.mp4 - 1
+......
+/kaggle/input/videodata/video_data/WithViolence/6___5265_5285.mp4 - 0
+/kaggle/input/videodata/video_data/NoViolence/55___1120_1140.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/39___700_720.mp4 - 1
+
+
+-------------------------------------------------------------------------------------------------------
+
+Validation:
+
+Number of items: 77 
+
+/kaggle/input/videodata/video_data/NoViolence/4___600_620.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/121___480_500.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/3___2480_2500.mp4 - 1
+..........
+/kaggle/input/videodata/video_data/NoViolence/118___1320_1340_f.mp4 - 1
+/kaggle/input/videodata/video_data/WithViolence/13___490_510.mp4 - 0
+/kaggle/input/videodata/video_data/NoViolence/116___520_540_f.mp4 - 1
+
+
+-------------------------------------------------------------------------------------------------------
+
+Testing:
+
+Number of items: 78 
+
+/kaggle/input/videodata/video_data/NoViolence/24___2480_2500.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/30___520_540.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/67___520_540.mp4 - 1
+........
+/kaggle/input/videodata/video_data/NoViolence/36___520_540.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/111___1500_1520.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/121___480_500_f.mp4 - 1
+
+
+-----------------------------------------------------------------------------------------------------
+
+
+
+===================  Creating model  ===================  
+
+
+Model: "model_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 20, 224, 224, 3)] 0         
+_________________________________________________________________
+time_distributed (TimeDistri (None, 20, 2048)          58331648  
+_________________________________________________________________
+bidirectional (Bidirectional (None, 8)                 65696     
+_________________________________________________________________
+dense (Dense)                (None, 1)                 9         
+=================================================================
+Total params: 58,397,353
+Trainable params: 65,705
+Non-trainable params: 58,331,648
+_________________________________________________________________
+
+
+===================  Training parameters ============================  
+
+
+
+Violent training samples: 1678
+
+Non-violent training samples: 6012
+
+violence_class_weights: 2.2914183551847436 / no_violence_class_weights: 0.6395542248835662
+
+Batch size: 64
+
+Steps per epoch: 121
+
+Validation samples: 77
+
+Validation steps: 2
+
+Test samples: 78 
+
+
+
+===================  Training ============================  
+
+
+Epoch 1/40
+Learning rate is 0.0001
+121/121 [==============================] - 1439s 12s/step - loss: 0.6878 - binary_accuracy: 0.5437 - val_loss: 0.6440 - val_binary_accuracy: 0.6623
+
+
+Epoch 2/40
+Learning rate is 0.0001
+121/121 [==============================] - 1345s 11s/step - loss: 0.6297 - binary_accuracy: 0.6628 - val_loss: 0.5876 - val_binary_accuracy: 0.7143
+
+
+Epoch 3/40
+Learning rate is 0.0001
+121/121 [==============================] - 1378s 11s/step - loss: 0.5680 - binary_accuracy: 0.7505 - val_loss: 0.4854 - val_binary_accuracy: 0.8182
+
+
+Epoch 4/40
+Learning rate is 0.0001
+121/121 [==============================] - 1379s 11s/step - loss: 0.5138 - binary_accuracy: 0.8077 - val_loss: 0.4523 - val_binary_accuracy: 0.8312
+
+
+Epoch 5/40
+Learning rate is 0.0001
+121/121 [==============================] - 1436s 12s/step - loss: 0.4770 - binary_accuracy: 0.8388 - val_loss: 0.4160 - val_binary_accuracy: 0.8442
+
+
+Epoch 6/40
+Learning rate is 0.0001
+121/121 [==============================] - 1388s 12s/step - loss: 0.4402 - binary_accuracy: 0.8606 - val_loss: 0.3901 - val_binary_accuracy: 0.8312
+
+
+Epoch 7/40
+Learning rate is 0.0001
+121/121 [==============================] - 1396s 12s/step - loss: 0.4012 - binary_accuracy: 0.8783 - val_loss: 0.3556 - val_binary_accuracy: 0.8442
+
+
+Epoch 8/40
+Learning rate is 0.0001
+121/121 [==============================] - 1363s 11s/step - loss: 0.3653 - binary_accuracy: 0.8975 - val_loss: 0.3407 - val_binary_accuracy: 0.8701
+
+
+Epoch 9/40
+Learning rate is 0.0001
+121/121 [==============================] - 1384s 11s/step - loss: 0.3404 - binary_accuracy: 0.9081 - val_loss: 0.3204 - val_binary_accuracy: 0.8961
+
+
+Epoch 10/40
+Learning rate is 0.0001
+121/121 [==============================] - 1368s 11s/step - loss: 0.3157 - binary_accuracy: 0.9177 - val_loss: 0.3140 - val_binary_accuracy: 0.9091
+
+
+Epoch 11/40
+Learning rate is 0.0001
+121/121 [==============================] - 1378s 11s/step - loss: 0.2973 - binary_accuracy: 0.9235 - val_loss: 0.3068 - val_binary_accuracy: 0.8961
+
+
+Epoch 12/40
+Learning rate is 0.0001
+121/121 [==============================] - 1336s 11s/step - loss: 0.2771 - binary_accuracy: 0.9346 - val_loss: 0.2887 - val_binary_accuracy: 0.9351
+
+
+Epoch 13/40
+Learning rate is 0.0001
+121/121 [==============================] - 1350s 11s/step - loss: 0.2608 - binary_accuracy: 0.9421 - val_loss: 0.2904 - val_binary_accuracy: 0.9351
+
+
+Epoch 14/40
+Learning rate is 0.0001
+121/121 [==============================] - 1346s 11s/step - loss: 0.2457 - binary_accuracy: 0.9456 - val_loss: 0.2725 - val_binary_accuracy: 0.9351
+
+
+Epoch 15/40
+Learning rate is 0.0001
+121/121 [==============================] - 1391s 12s/step - loss: 0.2331 - binary_accuracy: 0.9493 - val_loss: 0.2649 - val_binary_accuracy: 0.9351
+
+
+Epoch 16/40
+Learning rate is 0.0001
+121/121 [==============================] - 1360s 11s/step - loss: 0.2189 - binary_accuracy: 0.9572 - val_loss: 0.2488 - val_binary_accuracy: 0.9351
+
+
+Epoch 17/40
+Learning rate is 0.0001
+121/121 [==============================] - 1365s 11s/step - loss: 0.2099 - binary_accuracy: 0.9589 - val_loss: 0.2448 - val_binary_accuracy: 0.9351
+
+
+Epoch 18/40
+Learning rate is 0.0001
+121/121 [==============================] - 1358s 11s/step - loss: 0.1956 - binary_accuracy: 0.9649 - val_loss: 0.2312 - val_binary_accuracy: 0.9221
+
+
+Epoch 19/40
+Learning rate is 0.0001
+121/121 [==============================] - 1397s 12s/step - loss: 0.1847 - binary_accuracy: 0.9674 - val_loss: 0.2174 - val_binary_accuracy: 0.9351
+
+
+Epoch 20/40
+Learning rate is 0.0001
+121/121 [==============================] - 1396s 12s/step - loss: 0.1740 - binary_accuracy: 0.9697 - val_loss: 0.2131 - val_binary_accuracy: 0.9351
+
+
+Epoch 21/40
+Learning rate is 0.0001
+121/121 [==============================] - 1420s 12s/step - loss: 0.1652 - binary_accuracy: 0.9732 - val_loss: 0.2102 - val_binary_accuracy: 0.9351
+
+
+Epoch 22/40
+Learning rate is 0.0001
+121/121 [==============================] - 1382s 11s/step - loss: 0.1597 - binary_accuracy: 0.9728 - val_loss: 0.2014 - val_binary_accuracy: 0.9351
+
+
+Epoch 23/40
+Learning rate is 0.0001
+121/121 [==============================] - 1402s 12s/step - loss: 0.1516 - binary_accuracy: 0.9745 - val_loss: 0.1930 - val_binary_accuracy: 0.9481
+
+
+================================================================= Training 2 ================================================================================================
+
+
+===================  Loading data  ===================  
+
+
+/kaggle/input/videodata/video_data/ ['WithViolence', 'NoViolence']
+
+-----------------------------------------------------------------------------------------------------
+
+Training:
+
+Number of items: 7690 
+
+/kaggle/input/videodata/video_data/NoViolence/4___800_820.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/101___540_560.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/77___460_480.mp4 - 1
+......
+/kaggle/input/videodata/video_data/NoViolence/37___1620_1640.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/119___760_780_f.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/3___540_560.mp4 - 1
+
+
+-------------------------------------------------------------------------------------------------------
+
+Validation:
+
+Number of items: 77 
+
+/kaggle/input/videodata/video_data/NoViolence/130___900_920.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/52___1140_1160.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/36___1100_1120.mp4 - 1
+.........
+/kaggle/input/videodata/video_data/NoViolence/11___1720_1740.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/34___380_400.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/128___40_60.mp4 - 1
+
+
+-------------------------------------------------------------------------------------------------------
+
+Testing:
+
+Number of items: 78 
+
+/kaggle/input/videodata/video_data/NoViolence/124___560_580_f.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/2___1980_2000.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/111___1060_1080.mp4 - 1
+.......
+/kaggle/input/videodata/video_data/NoViolence/15___1200_1220.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/4___2100_2120.mp4 - 1
+/kaggle/input/videodata/video_data/WithViolence/81___630_650.mp4 - 0
+
+
+-----------------------------------------------------------------------------------------------------
+
+
+
+===================  Loading model  ===================  
+
+
+===================  Training parameters ============================  
+
+
+
+Violent training samples: 1685
+
+Non-violent training samples: 6005
+
+violence_class_weights: 2.2818991097922847 / no_violence_class_weights: 0.6402997502081599
+
+Batch size: 64
+
+Steps per epoch: 121
+
+Validation samples: 77
+
+Validation steps: 2
+
+Test samples: 78 
+
+
+
+===================  Training ============================  
+
+
+Epoch 1/40
+Learning rate is 0.0001
+121/121 [==============================] - 1260s 10s/step - loss: 0.1459 - binary_accuracy: 0.9772 - val_loss: 0.1388 - val_binary_accuracy: 0.9610
+
+Epoch 2/40
+Learning rate is 0.0001
+121/121 [==============================] - 1213s 10s/step - loss: 0.1377 - binary_accuracy: 0.9782 - val_loss: 0.1408 - val_binary_accuracy: 0.9610
+
+
+Epoch 3/40
+Learning rate is 0.0001
+121/121 [==============================] - 1247s 10s/step - loss: 0.1297 - binary_accuracy: 0.9810 - val_loss: 0.1430 - val_binary_accuracy: 0.9610
+
+
+Epoch 4/40
+Learning rate is 0.0001
+121/121 [==============================] - 1211s 10s/step - loss: 0.1240 - binary_accuracy: 0.9826 - val_loss: 0.1520 - val_binary_accuracy: 0.9610
+
+
+Epoch 5/40
+Learning rate is 0.0001
+121/121 [==============================] - 1232s 10s/step - loss: 0.1179 - binary_accuracy: 0.9830 - val_loss: 0.1400 - val_binary_accuracy: 0.9610
+
+
+Epoch 6/40
+Learning rate is 0.0001
+121/121 [==============================] - 1237s 10s/step - loss: 0.1134 - binary_accuracy: 0.9835 - val_loss: 0.1119 - val_binary_accuracy: 0.9870
+
+
+Epoch 7/40
+Learning rate is 0.0001
+121/121 [==============================] - 1233s 10s/step - loss: 0.1073 - binary_accuracy: 0.9850 - val_loss: 0.1201 - val_binary_accuracy: 0.9870
+
+
+Epoch 8/40
+Learning rate is 0.0001
+121/121 [==============================] - 1212s 10s/step - loss: 0.1003 - binary_accuracy: 0.9878 - val_loss: 0.0936 - val_binary_accuracy: 0.9870
+
+
+Epoch 9/40
+Learning rate is 0.0001
+121/121 [==============================] - 1246s 10s/step - loss: 0.0974 - binary_accuracy: 0.9866 - val_loss: 0.1344 - val_binary_accuracy: 0.9740
+
+
+Epoch 10/40
+Learning rate is 0.0001
+121/121 [==============================] - 1216s 10s/step - loss: 0.0900 - binary_accuracy: 0.9902 - val_loss: 0.0981 - val_binary_accuracy: 1.0000
+
+
+Epoch 11/40
+Learning rate is 0.0001
+121/121 [==============================] - 1226s 10s/step - loss: 0.0840 - binary_accuracy: 0.9919 - val_loss: 0.0849 - val_binary_accuracy: 1.0000
+
+
+Epoch 12/40
+Learning rate is 0.0001
+121/121 [==============================] - 1215s 10s/step - loss: 0.0800 - binary_accuracy: 0.9922 - val_loss: 0.0781 - val_binary_accuracy: 1.0000
+
+
+Epoch 13/40
+Learning rate is 0.0001
+121/121 [==============================] - 1233s 10s/step - loss: 0.0754 - binary_accuracy: 0.9923 - val_loss: 0.0756 - val_binary_accuracy: 1.0000
+
+
+Epoch 14/40
+Learning rate is 0.0001
+121/121 [==============================] - 1217s 10s/step - loss: 0.0722 - binary_accuracy: 0.9928 - val_loss: 0.0685 - val_binary_accuracy: 1.0000
+
+
+Epoch 15/40
+Learning rate is 0.0001
+121/121 [==============================] - 1237s 10s/step - loss: 0.0704 - binary_accuracy: 0.9918 - val_loss: 0.0648 - val_binary_accuracy: 1.0000
+
+
+Epoch 16/40
+Learning rate is 0.0001
+121/121 [==============================] - 1214s 10s/step - loss: 0.0673 - binary_accuracy: 0.9927 - val_loss: 0.0712 - val_binary_accuracy: 0.9870
+
+
+Epoch 17/40
+Learning rate is 0.0001
+121/121 [==============================] - 1233s 10s/step - loss: 0.0702 - binary_accuracy: 0.9913 - val_loss: 0.0673 - val_binary_accuracy: 1.0000
+
+
+Epoch 18/40
+Learning rate is 0.0001
+121/121 [==============================] - 1216s 10s/step - loss: 0.0597 - binary_accuracy: 0.9954 - val_loss: 0.0576 - val_binary_accuracy: 1.0000
+
+
+Epoch 19/40
+Learning rate is 0.0001
+121/121 [==============================] - 1228s 10s/step - loss: 0.0584 - binary_accuracy: 0.9949 - val_loss: 0.0532 - val_binary_accuracy: 1.0000
+
+
+Epoch 20/40
+Learning rate is 0.0001
+121/121 [==============================] - 1216s 10s/step - loss: 0.0544 - binary_accuracy: 0.9961 - val_loss: 0.0489 - val_binary_accuracy: 1.0000
+
+
+Epoch 21/40
+Learning rate is 0.0001
+121/121 [==============================] - 1232s 10s/step - loss: 0.0509 - binary_accuracy: 0.9964 - val_loss: 0.0480 - val_binary_accuracy: 1.0000
+
+
+Epoch 22/40
+Learning rate is 0.0001
+121/121 [==============================] - 1219s 10s/step - loss: 0.0502 - binary_accuracy: 0.9952 - val_loss: 0.0464 - val_binary_accuracy: 1.0000
+
+
+Epoch 23/40
+Learning rate is 0.0001
+121/121 [==============================] - 1248s 10s/step - loss: 0.0461 - binary_accuracy: 0.9966 - val_loss: 0.0417 - val_binary_accuracy: 1.0000
+
+
+Epoch 24/40
+Learning rate is 0.0001
+121/121 [==============================] - 1262s 10s/step - loss: 0.0429 - binary_accuracy: 0.9974 - val_loss: 0.0476 - val_binary_accuracy: 1.0000
+
+
+======================================================================= Training 3 ========================================================================================
+
+===================  Loading data  ===================  
+
+
+/kaggle/input/videodata/video_data/ ['WithViolence', 'NoViolence']
+
+-----------------------------------------------------------------------------------------------------
+
+Training:
+
+Number of items: 7690 
+
+/kaggle/input/videodata/video_data/WithViolence/12___5590_5610.mp4 - 0
+/kaggle/input/videodata/video_data/NoViolence/39___380_400.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/123___200_220.mp4 - 1
+.............
+/kaggle/input/videodata/video_data/NoViolence/1___1580_1600.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/42___1060_1080.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/41___1240_1260.mp4 - 1
+
+
+-------------------------------------------------------------------------------------------------------
+
+Validation:
+
+Number of items: 77 
+
+/kaggle/input/videodata/video_data/NoViolence/32___1100_1105.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/132___60_80.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/15___220_240.mp4 - 1
+........
+/kaggle/input/videodata/video_data/NoViolence/55___1320_1340.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/76___1260_1280.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/126___460_480.mp4 - 1
+
+
+-------------------------------------------------------------------------------------------------------
+
+Testing:
+
+Number of items: 78 
+
+/kaggle/input/videodata/video_data/NoViolence/2___1140_1160.mp4 - 1
+/kaggle/input/videodata/video_data/WithViolence/12___4900_4920.mp4 - 0
+/kaggle/input/videodata/video_data/NoViolence/118___40_60.mp4 - 1
+..........
+/kaggle/input/videodata/video_data/NoViolence/118___860_880.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/60___1260_1280.mp4 - 1
+/kaggle/input/videodata/video_data/WithViolence/6___1810_1830.mp4 - 0
+
+
+-----------------------------------------------------------------------------------------------------
+
+
+
+===================  Loading model  ===================  
+
+
+
+===================  Training parameters ============================  
+
+
+
+Violent training samples: 1682
+
+Non-violent training samples: 6008
+
+violence_class_weights: 2.2859690844233054 / no_violence_class_weights: 0.6399800266311585
+
+Batch size: 64
+
+Steps per epoch: 121
+
+Validation samples: 77
+
+Validation steps: 2
+
+Test samples: 78 
+
+
+
+===================  Training ============================  
+
+
+Epoch 1/40
+Learning rate is 0.0001
+121/121 [==============================] - 1757s 14s/step - loss: 0.0487 - binary_accuracy: 0.9936 - val_loss: 0.0723 - val_binary_accuracy: 0.9870
+
+
+Epoch 2/40
+Learning rate is 0.0001
+121/121 [==============================] - 1651s 14s/step - loss: 0.0594 - binary_accuracy: 0.9895 - val_loss: 0.0594 - val_binary_accuracy: 0.9870
+
+
+Epoch 3/40
+Learning rate is 0.0001
+121/121 [==============================] - 1694s 14s/step - loss: 0.0592 - binary_accuracy: 0.9893 - val_loss: 0.0545 - val_binary_accuracy: 0.9870
+
+
+Epoch 4/40
+Learning rate is 0.0001
+121/121 [==============================] - 1683s 14s/step - loss: 0.0475 - binary_accuracy: 0.9951 - val_loss: 0.0439 - val_binary_accuracy: 1.0000
+
+
+Epoch 5/40
+Learning rate is 0.0001
+121/121 [==============================] - 1696s 14s/step - loss: 0.0435 - binary_accuracy: 0.9958 - val_loss: 0.0478 - val_binary_accuracy: 0.9870
+
+
+Epoch 6/40
+Learning rate is 0.0001
+121/121 [==============================] - 1588s 13s/step - loss: 0.0355 - binary_accuracy: 0.9983 - val_loss: 0.0437 - val_binary_accuracy: 0.9870
+
+
+Epoch 7/40
+Learning rate is 0.0001
+121/121 [==============================] - 1659s 14s/step - loss: 0.0371 - binary_accuracy: 0.9969 - val_loss: 0.0559 - val_binary_accuracy: 1.0000
+
+
+Epoch 8/40
+Learning rate is 0.0001
+121/121 [==============================] - 1304s 11s/step - loss: 0.0408 - binary_accuracy: 0.9958 - val_loss: 0.0465 - val_binary_accuracy: 0.9870
+
+
+Epoch 9/40
+Learning rate is 0.0001
+121/121 [==============================] - 1322s 11s/step - loss: 0.0316 - binary_accuracy: 0.9990 - val_loss: 0.0435 - val_binary_accuracy: 0.9870
+
+
+Epoch 10/40
+Learning rate is 0.0001
+121/121 [==============================] - 1303s 11s/step - loss: 0.0294 - binary_accuracy: 0.9987 - val_loss: 0.0476 - val_binary_accuracy: 0.9870
+
+
+Epoch 11/40
+Learning rate is 0.0001
+121/121 [==============================] - 1320s 11s/step - loss: 0.0294 - binary_accuracy: 0.9984 - val_loss: 0.0430 - val_binary_accuracy: 0.9870
+
+
+============================================================================== Training 4 ==================================================================================
+
+
+===================  Loading data  ===================  
+
+
+/kaggle/input/videodata/video_data/ ['WithViolence', 'NoViolence']
+
+-----------------------------------------------------------------------------------------------------
+
+Training:
+
+Number of items: 7690 
+
+/kaggle/input/videodata/video_data/NoViolence/121___320_340.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/3___1440_1460.mp4 - 1
+/kaggle/input/videodata/video_data/WithViolence/120___1375_1395_f.mp4 - 0
+........
+/kaggle/input/videodata/video_data/NoViolence/93___660_680.mp4 - 1
+/kaggle/input/videodata/video_data/WithViolence/43___980_1000.mp4 - 0
+/kaggle/input/videodata/video_data/WithViolence/25___940_960.mp4 - 0
+
+
+-------------------------------------------------------------------------------------------------------
+
+Validation:
+
+Number of items: 77 
+
+/kaggle/input/videodata/video_data/NoViolence/76___1140_1160.mp4 - 1
+/kaggle/input/videodata/video_data/WithViolence/6___5070_5090.mp4 - 0
+/kaggle/input/videodata/video_data/NoViolence/111___1060_1080.mp4 - 1
+..........
+/kaggle/input/videodata/video_data/NoViolence/30___500_520.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/8___1200_1220.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/60___1300_1320.mp4 - 1
+
+
+-------------------------------------------------------------------------------------------------------
+
+Testing:
+
+Number of items: 78 
+
+/kaggle/input/videodata/video_data/NoViolence/111___1580_1600.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/4___440_460.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/101___100_120_f.mp4 - 1
+.........
+/kaggle/input/videodata/video_data/WithViolence/64___1090_1110.mp4 - 0
+/kaggle/input/videodata/video_data/WithViolence/120___730_750.mp4 - 0
+/kaggle/input/videodata/video_data/NoViolence/95___320_340.mp4 - 1
+
+
+-----------------------------------------------------------------------------------------------------
+
+
+
+===================  Loading model  ===================  
+
+
+
+===================  Training parameters ============================  
+
+
+
+Violent training samples: 1677
+
+Non-violent training samples: 6013
+
+violence_class_weights: 2.2927847346452 / no_violence_class_weights: 0.6394478629635789
+
+Batch size: 64
+
+Steps per epoch: 121
+
+Validation samples: 77
+
+Validation steps: 2
+
+Test samples: 78 
+
+
+
+===================  Training ============================  
+
+
+Epoch 1/40
+Learning rate is 1e-05
+121/121 [==============================] - 1325s 11s/step - loss: 0.0288 - binary_accuracy: 0.9983 - val_loss: 0.0182 - val_binary_accuracy: 1.0000
+
+
+Epoch 2/40
+Learning rate is 1e-05
+121/121 [==============================] - 1267s 11s/step - loss: 0.0268 - binary_accuracy: 0.9991 - val_loss: 0.0177 - val_binary_accuracy: 1.0000
+
+
+Epoch 3/40
+Learning rate is 1e-05
+121/121 [==============================] - 1331s 11s/step - loss: 0.0259 - binary_accuracy: 0.9993 - val_loss: 0.0173 - val_binary_accuracy: 1.0000
+
+
+Epoch 4/40
+Learning rate is 1e-05
+121/121 [==============================] - 1276s 11s/step - loss: 0.0255 - binary_accuracy: 0.9993 - val_loss: 0.0172 - val_binary_accuracy: 1.0000
+
+
+Epoch 5/40
+Learning rate is 1e-05
+121/121 [==============================] - 1271s 11s/step - loss: 0.0253 - binary_accuracy: 0.9993 - val_loss: 0.0171 - val_binary_accuracy: 1.0000
+
+
+Epoch 6/40
+Learning rate is 1e-05
+121/121 [==============================] - 1256s 10s/step - loss: 0.0251 - binary_accuracy: 0.9992 - val_loss: 0.0170 - val_binary_accuracy: 1.0000
+
+
+Epoch 7/40
+Learning rate is 1e-05
+121/121 [==============================] - 1276s 11s/step - loss: 0.0249 - binary_accuracy: 0.9992 - val_loss: 0.0169 - val_binary_accuracy: 1.0000
+
+
+Epoch 8/40
+Learning rate is 1e-05
+121/121 [==============================] - 1263s 10s/step - loss: 0.0247 - binary_accuracy: 0.9992 - val_loss: 0.0168 - val_binary_accuracy: 1.0000
+
+
+Epoch 9/40
+Learning rate is 1e-05
+121/121 [==============================] - 1299s 11s/step - loss: 0.0246 - binary_accuracy: 0.9992 - val_loss: 0.0167 - val_binary_accuracy: 1.0000
+
+
+Epoch 10/40
+Learning rate is 1e-05
+121/121 [==============================] - 1284s 11s/step - loss: 0.0244 - binary_accuracy: 0.9995 - val_loss: 0.0166 - val_binary_accuracy: 1.0000
+
+
+Epoch 11/40
+Learning rate is 1e-05
+121/121 [==============================] - 1258s 10s/step - loss: 0.0242 - binary_accuracy: 0.9995 - val_loss: 0.0165 - val_binary_accuracy: 1.0000
+
+
+Epoch 12/40
+Learning rate is 1e-05
+121/121 [==============================] - 1236s 10s/step - loss: 0.0241 - binary_accuracy: 0.9995 - val_loss: 0.0164 - val_binary_accuracy: 1.0000
+
+
+Epoch 13/40
+Learning rate is 1e-05
+121/121 [==============================] - 1255s 10s/step - loss: 0.0239 - binary_accuracy: 0.9995 - val_loss: 0.0163 - val_binary_accuracy: 1.0000
+
+
+Epoch 14/40
+Learning rate is 1e-05
+121/121 [==============================] - 1233s 10s/step - loss: 0.0237 - binary_accuracy: 0.9995 - val_loss: 0.0162 - val_binary_accuracy: 1.0000
+
+
+Epoch 15/40
+Learning rate is 1e-05
+121/121 [==============================] - 1260s 10s/step - loss: 0.0236 - binary_accuracy: 0.9995 - val_loss: 0.0162 - val_binary_accuracy: 1.0000
+
+
+Epoch 16/40
+Learning rate is 1e-05
+121/121 [==============================] - 1237s 10s/step - loss: 0.0234 - binary_accuracy: 0.9995 - val_loss: 0.0161 - val_binary_accuracy: 1.0000
+
+
+Epoch 17/40
+Learning rate is 1e-05
+121/121 [==============================] - 1258s 10s/step - loss: 0.0232 - binary_accuracy: 0.9995 - val_loss: 0.0160 - val_binary_accuracy: 1.0000
+
+
+Epoch 18/40
+Learning rate is 1e-05
+121/121 [==============================] - 1250s 10s/step - loss: 0.0231 - binary_accuracy: 0.9995 - val_loss: 0.0159 - val_binary_accuracy: 1.0000
+  
+  
+============================================================================= Training 5 ===================================================================================
+
+===================  Loading data  ===================  
+
+
+/kaggle/input/videodata/video_data/ ['WithViolence', 'NoViolence']
+
+-----------------------------------------------------------------------------------------------------
+
+Training:
+
+Number of items: 7690 
+
+/kaggle/input/videodata/video_data/NoViolence/45___520_540.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/41___2220_2240.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/36___1580_1600.mp4 - 1
+........
+/kaggle/input/videodata/video_data/NoViolence/77___2480_2500.mp4 - 1
+/kaggle/input/videodata/video_data/WithViolence/13___1090_1110.mp4 - 0
+/kaggle/input/videodata/video_data/NoViolence/99___760_780_f.mp4 - 1
+
+
+-------------------------------------------------------------------------------------------------------
+
+Validation:
+
+Number of items: 77 
+
+/kaggle/input/videodata/video_data/WithViolence/113___1220_1240.mp4 - 0
+/kaggle/input/videodata/video_data/NoViolence/86___940_960.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/41___1980_2000.mp4 - 1
+.........
+/kaggle/input/videodata/video_data/NoViolence/3___2600_2620.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/123___1120_1140.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/3___740_760.mp4 - 1
+
+
+-------------------------------------------------------------------------------------------------------
+
+Testing:
+
+Number of items: 78 
+
+/kaggle/input/videodata/video_data/NoViolence/93___380_400.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/2___2240_2260.mp4 - 1
+/kaggle/input/videodata/video_data/WithViolence/17___2380_2400.mp4 - 0
+............
+/kaggle/input/videodata/video_data/WithViolence/49___465_485.mp4 - 0
+/kaggle/input/videodata/video_data/NoViolence/101___220_240.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/112___740_760.mp4 - 1
+
+
+-----------------------------------------------------------------------------------------------------
+
+
+
+===================  Loading model  ===================  
+
+
+
+===================  Training parameters ============================  
+
+
+
+Violent training samples: 1674
+
+Non-violent training samples: 6016
+
+violence_class_weights: 2.2968936678614096 / no_violence_class_weights: 0.6391289893617021
+
+Batch size: 64
+
+Steps per epoch: 121
+
+Validation samples: 77
+
+Validation steps: 2
+
+Test samples: 78 
+
+
+
+===================  Training ============================  
+
+
+Epoch 1/40
+Learning rate is 1e-05
+121/121 [==============================] - 1295s 11s/step - loss: 0.0228 - binary_accuracy: 0.9995 - val_loss: 0.0158 - val_binary_accuracy: 1.0000
+
+
+Epoch 2/40
+Learning rate is 1e-05
+121/121 [==============================] - 1221s 10s/step - loss: 0.0226 - binary_accuracy: 0.9995 - val_loss: 0.0159 - val_binary_accuracy: 1.0000
+
+
+Epoch 3/40
+Learning rate is 1e-05
+121/121 [==============================] - 1246s 10s/step - loss: 0.0225 - binary_accuracy: 0.9995 - val_loss: 0.0158 - val_binary_accuracy: 1.0000
+
+
+Epoch 4/40
+Learning rate is 1e-05
+121/121 [==============================] - 1253s 10s/step - loss: 0.0223 - binary_accuracy: 0.9995 - val_loss: 0.0158 - val_binary_accuracy: 1.0000
+
+
+Epoch 5/40
+Learning rate is 1e-05
+121/121 [==============================] - 1266s 11s/step - loss: 0.0221 - binary_accuracy: 0.9995 - val_loss: 0.0157 - val_binary_accuracy: 1.0000
+
+
+Epoch 6/40
+Learning rate is 1e-05
+121/121 [==============================] - 1250s 10s/step - loss: 0.0219 - binary_accuracy: 0.9995 - val_loss: 0.0156 - val_binary_accuracy: 1.0000
+
+
+Epoch 7/40
+Learning rate is 1e-05
+121/121 [==============================] - 1285s 11s/step - loss: 0.0217 - binary_accuracy: 0.9995 - val_loss: 0.0155 - val_binary_accuracy: 1.0000
+
+
+Epoch 8/40
+Learning rate is 1e-05
+121/121 [==============================] - 1240s 10s/step - loss: 0.0216 - binary_accuracy: 0.9995 - val_loss: 0.0154 - val_binary_accuracy: 1.0000
+
+
+Epoch 9/40
+Learning rate is 1e-05
+121/121 [==============================] - 1244s 10s/step - loss: 0.0214 - binary_accuracy: 0.9995 - val_loss: 0.0153 - val_binary_accuracy: 1.0000
+
+
+Epoch 10/40
+Learning rate is 1e-05
+121/121 [==============================] - 1227s 10s/step - loss: 0.0212 - binary_accuracy: 0.9996 - val_loss: 0.0152 - val_binary_accuracy: 1.0000
+
+
+Epoch 11/40
+Learning rate is 1e-05
+121/121 [==============================] - 1252s 10s/step - loss: 0.0210 - binary_accuracy: 0.9997 - val_loss: 0.0151 - val_binary_accuracy: 1.0000
+
+
+Epoch 12/40
+Learning rate is 1e-05
+121/121 [==============================] - 1241s 10s/step - loss: 0.0208 - binary_accuracy: 0.9997 - val_loss: 0.0150 - val_binary_accuracy: 1.0000
+
+
+Epoch 13/40
+Learning rate is 1e-05
+121/121 [==============================] - 1257s 10s/step - loss: 0.0207 - binary_accuracy: 0.9997 - val_loss: 0.0149 - val_binary_accuracy: 1.0000
+
+
+Epoch 14/40
+Learning rate is 1e-05
+121/121 [==============================] - 1229s 10s/step - loss: 0.0205 - binary_accuracy: 0.9997 - val_loss: 0.0148 - val_binary_accuracy: 1.0000
+
+
+Epoch 15/40
+Learning rate is 1e-05
+121/121 [==============================] - 1245s 10s/step - loss: 0.0203 - binary_accuracy: 0.9997 - val_loss: 0.0147 - val_binary_accuracy: 1.0000
+
+
+Epoch 16/40
+Learning rate is 1e-05
+121/121 [==============================] - 1231s 10s/step - loss: 0.0201 - binary_accuracy: 0.9997 - val_loss: 0.0146 - val_binary_accuracy: 1.0000
+
+
+Epoch 17/40
+Learning rate is 1e-05
+121/121 [==============================] - 1253s 10s/step - loss: 0.0199 - binary_accuracy: 0.9997 - val_loss: 0.0145 - val_binary_accuracy: 1.0000
+
+
+Epoch 18/40
+Learning rate is 1e-05
+121/121 [==============================] - 1226s 10s/step - loss: 0.0198 - binary_accuracy: 0.9997 - val_loss: 0.0144 - val_binary_accuracy: 1.0000
+
+
+Epoch 19/40
+Learning rate is 1e-05
+121/121 [==============================] - 1261s 10s/step - loss: 0.0196 - binary_accuracy: 0.9997 - val_loss: 0.0143 - val_binary_accuracy: 1.0000
+
+
+Epoch 20/40
+Learning rate is 1e-05
+121/121 [==============================] - 1227s 10s/step - loss: 0.0194 - binary_accuracy: 0.9997 - val_loss: 0.0142 - val_binary_accuracy: 1.0000
+
+============================================================================== Training 6 =======================================================================================
+
+
+===================  Loading data  ===================  
+
+
+/kaggle/input/videodata/video_data/ ['WithViolence', 'NoViolence']
+
+-----------------------------------------------------------------------------------------------------
+
+Training:
+
+Number of items: 7690 
+
+/kaggle/input/videodata/video_data/NoViolence/119___500_520_f.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/4___800_820.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/80___760_780.mp4 - 1
+.........
+/kaggle/input/videodata/video_data/NoViolence/95___580_600.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/80___60_80.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/111___400_420.mp4 - 1
+
+
+-------------------------------------------------------------------------------------------------------
+
+Validation:
+
+Number of items: 77 
+
+/kaggle/input/videodata/video_data/NoViolence/1___1900_1920.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/14___2020_2040.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/32___0_20_f.mp4 - 1
+.........
+/kaggle/input/videodata/video_data/NoViolence/30___740_760.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/119___0_20_f.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/119___680_700.mp4 - 1
+
+
+-------------------------------------------------------------------------------------------------------
+
+Testing:
+
+Number of items: 78 
+
+/kaggle/input/videodata/video_data/NoViolence/60___2360_2380.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/2___2100_2120.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/32___140_160_f.mp4 - 1
+..........
+/kaggle/input/videodata/video_data/NoViolence/89___480_500.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/21___80_100.mp4 - 1
+/kaggle/input/videodata/video_data/NoViolence/11___2080_2100.mp4 - 1
+
+
+-----------------------------------------------------------------------------------------------------
+
+
+
+===================  Loading model  ===================  
+
+
+
+===================  Training parameters ============================  
+
+
+
+Violent training samples: 1676
+
+Non-violent training samples: 6014
+
+violence_class_weights: 2.294152744630072 / no_violence_class_weights: 0.6393415364150316
+
+Batch size: 64
+
+Steps per epoch: 121
+
+Validation samples: 77
+
+Validation steps: 2
+
+Test samples: 78 
+
+
+
+===================  Training ============================  
+
+
+Epoch 1/40
+Learning rate is 1e-05
+121/121 [==============================] - 1294s 11s/step - loss: 0.0202 - binary_accuracy: 0.9996 - val_loss: 0.0191 - val_binary_accuracy: 1.0000
+
+
+Epoch 2/40
+Learning rate is 1e-05
+121/121 [==============================] - 1205s 10s/step - loss: 0.0197 - binary_accuracy: 0.9997 - val_loss: 0.0222 - val_binary_accuracy: 1.0000
+
+
+Epoch 3/40
+Learning rate is 1e-05
+121/121 [==============================] - 1254s 10s/step - loss: 0.0194 - binary_accuracy: 0.9996 - val_loss: 0.0184 - val_binary_accuracy: 1.0000
+
+
+Epoch 4/40
+Learning rate is 1e-05
+121/121 [==============================] - 1236s 10s/step - loss: 0.0190 - binary_accuracy: 0.9997 - val_loss: 0.0184 - val_binary_accuracy: 1.0000
+
+
+Epoch 5/40
+Learning rate is 1e-05
+121/121 [==============================] - 1225s 10s/step - loss: 0.0188 - binary_accuracy: 0.9997 - val_loss: 0.0182 - val_binary_accuracy: 1.0000
+
+
+Epoch 6/40
+Learning rate is 1e-05
+121/121 [==============================] - 1198s 10s/step - loss: 0.0186 - binary_accuracy: 0.9997 - val_loss: 0.0181 - val_binary_accuracy: 1.0000
+
+
+Epoch 7/40
+Learning rate is 1e-05
+121/121 [==============================] - 1247s 10s/step - loss: 0.0185 - binary_accuracy: 0.9997 - val_loss: 0.0181 - val_binary_accuracy: 1.0000
+
+
+Epoch 8/40
+Learning rate is 1e-05
+121/121 [==============================] - 1578s 13s/step - loss: 0.0183 - binary_accuracy: 0.9997 - val_loss: 0.0180 - val_binary_accuracy: 1.0000
+
+
+Epoch 9/40
+Learning rate is 1e-05
+121/121 [==============================] - 1773s 15s/step - loss: 0.0182 - binary_accuracy: 0.9997 - val_loss: 0.0179 - val_binary_accuracy: 1.0000
+
+
+Epoch 10/40
+Learning rate is 1e-05
+121/121 [==============================] - 1230s 10s/step - loss: 0.0180 - binary_accuracy: 0.9997 - val_loss: 0.0178 - val_binary_accuracy: 1.0000
+
+
+Epoch 11/40
+Learning rate is 1e-05
+121/121 [==============================] - 1209s 10s/step - loss: 0.0179 - binary_accuracy: 0.9997 - val_loss: 0.0177 - val_binary_accuracy: 1.0000
+
+
+Epoch 12/40
+Learning rate is 1e-05
+121/121 [==============================] - 1193s 10s/step - loss: 0.0177 - binary_accuracy: 0.9997 - val_loss: 0.0176 - val_binary_accuracy: 1.0000
+
+
+Epoch 13/40
+Learning rate is 1e-05
+121/121 [==============================] - 1229s 10s/step - loss: 0.0176 - binary_accuracy: 0.9997 - val_loss: 0.0175 - val_binary_accuracy: 1.0000
+
+
+Epoch 14/40
+Learning rate is 1e-05
+121/121 [==============================] - 1233s 10s/step - loss: 0.0174 - binary_accuracy: 0.9997 - val_loss: 0.0174 - val_binary_accuracy: 1.0000
+
+
+Epoch 15/40
+Learning rate is 1e-05
+121/121 [==============================] - 1277s 11s/step - loss: 0.0173 - binary_accuracy: 0.9997 - val_loss: 0.0173 - val_binary_accuracy: 1.0000
+
+===============================================================================================================================================================
+
