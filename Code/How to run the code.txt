@@ -1,0 +1,79 @@
+
+Files:
+
+settings.py
+In this module are defined global parameters that are used in several modules.
+List of classification classes, height/width of the processed images etc.
+
+utils.py
+This module contains some utilities. The function that sets CPU/GPU mode for the model
+training and the function that returns date/time string.
+
+frames_processing.py
+Implementation of video and frames processing for further training, testing, classification.
+Getting video parameters, loading frames from video files, writing frames to video files,
+writing frames to image files, resizing, padding frames, extracting certain frames, extracting
+specific region from the frames, creating blank frames, creating padded frames sequence –
+adding blank frames to the existing ones, flipping, blurring, reversing, rotating video files for
+data augmentation purpose.
+
+classification.py
+Implementation of video stream classification.
+Frames sequence classification, windowing, models testing.
+
+conv2d_lstm.py
+Creating/training a model based on combination of the architectures “Conv2D” and “LSTM”.
+
+conv2d_lstm_model.h5
+The file contains the trained model.
+
+resnet152v2_weights_tf_dim_ordering_tf_kernels_notop.h5
+Thr file contains model pre-trained weights for the ResNet152 model (without output file).
+
+
+Development tools that were used for the project implementation.
+Language: Python 3.9 
+Libraries: keras/tensorflow, pandas, matplotlib, scikit-learn, numpy, opencv-python.
+Development environments: Spider 3.3.6, PyCharm 2021.3.1.
+Cloud platforms: Google Colaboratory, Kaggle.
+
+
+
+Training
+
+The code for training is found in the file conv2d_lstm.py. 
+The dataset directory is called "video_data" and must be found in the same directory as the code files.
+Also, the directory "model_data" must be located there. This directory includes the file 
+resnet152v2_weights_tf_dim_ordering_tf_kernels_notop.h5 containing pre-trained weights for the ResNet152.
+The final version of the code and the dataset were trained on the Kaggle cloud platform, using Python 3.9.
+It were performed several trainings. During the first training a model was created. During the rest
+trainings the model was loaded.
+Use the code to create/load model:
+
+	# create new model
+	print("\n\n===================  Creating model  ===================  "\n\n")
+	model = create_model(classes, create_resnet152_v2_cnn_base)
+        
+    # load existing model   
+#    print("\n\n===================  Loading model  ===================  "\n\n")
+#    model = keras.models.load_model('conv2d_lstm_model.h5')
+
+If the training stops improving the results then the learning rate (LEARNING_RATE) should be decreased.
+
+
+
+
+Testing/classification
+
+The code for classification is found in the file classification.py. Be sure that the model file
+conv2d_lstm_model.h5 is located in the same directory. In the function "main" set the correct
+path to the directory "Test" containing the tested video files - the variable "path".
+In the “main” function set uncommented the lines:
+
+lst = [i for i in range(1, 120 + 1)] 
+testing(model, lst, False) 
+
+All video files in the "Test" directory will be classified. If you want to clssify specific video files
+then put their numbers to the list "lst".
+
+
