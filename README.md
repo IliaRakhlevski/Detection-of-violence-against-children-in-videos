@@ -43,8 +43,8 @@ the same directory as the code files. Open the development environment and run t
 The code for classification is found in the file classification.py. Be sure that the model file<br/>
 conv2d_lstm_model.h5 is located in the same directory. In the function testing set the correct<br/>
 path to the directory containing the tested video files. In the “main” function set the lines <br/>
-lst = [i for i in range(1, 120 + 1)] <br/>
-testing(model, lst, False) <br/>
+***lst = [i for i in range(1, 120 + 1)] <br/>
+testing(model, lst, False)*** <br/>
 uncommented. Open the development environment and run this file.<br/>
 
 See *"Final Project Presentation.pdf"* for the details.
