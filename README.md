@@ -9,8 +9,8 @@ This project proposes a physical violence detecting method based on indoor surve
 The cameras capture video streams, these streams are classified by using a deep learning Convolutional 
 Neural Network (CNN) and Long Short-Term Memory (LSTM) based approach for violence detection by learning <br/> 
 the detailed features in videos.<br/> 
-The CNN is used for feature extraction and LSTM is used to classify video based on those features.<br/>
-As a CNN feature extraction we use ResNet152V2 pre-trained model.<br/>
+The CNN is used for features extraction and LSTM is used to classify video based on those features.<br/>
+As a CNN features extraction we use ResNet152V2 pre-trained model.<br/>
 The dataset presented in the repository has only several examples. The full dataset has about 8000 videos.
 
 **Project files:**<br/>
@@ -36,5 +36,15 @@ Creating/training a model based on combination of the architectures “Conv2D”
 Summary of the model training.<br/>
 * *Testing_run_results.txt*<br/>
 Output of the reference videos testing.<br/>
+
+The code for training is found in the file conv2d_lstm.py. The train dataset must be located in<br/>
+the same directory as this file. The dataset directory is called "video_data" and must be found in<br/>
+the same directory as the code files. Open the development environment and run this file.<br/>
+The code for classification is found in the file classification.py. Be sure that the model file<br/>
+conv2d_lstm_model.h5 is located in the same directory. In the function testing set the correct<br/>
+path to the directory containing the tested video files. In the “main” function set the lines <br/>
+lst = [i for i in range(1, 120 + 1)] <br/>
+testing(model, lst, False) <br/>
+uncommented. Open the development environment and run this file.<br/>
 
 See *"Final Project Presentation.pdf"* for the details.
