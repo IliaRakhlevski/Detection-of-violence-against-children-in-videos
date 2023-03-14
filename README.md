@@ -5,13 +5,27 @@
 **Development environments:** Spider 3.3.6, PyCharm 2021.3.1.<br/>
 **Cloud platforms:** Google Colaboratory, Kaggle.<br/>
 
-This project proposes a physical violence detecting method based on indoor surveillance cameras.<br/> 
-The cameras capture video streams, these streams are classified by using a deep learning Convolutional 
-Neural Network (CNN) and Long Short-Term Memory (LSTM) based approach for violence detection by learning <br/> 
-the detailed features in videos.<br/> 
-The CNN is used for features extraction and LSTM is used to classify video based on those features.<br/>
-As a CNN features extraction we use ResNet152V2 pre-trained model.<br/>
-The dataset presented in the repository has only several examples. The full dataset has about 8000 videos.
+This project proposes a physical violence detecting method based on indoor
+surveillance cameras. The cameras capture video streams, these streams are
+classified by using a deep-learning Convolution Neural Network (CNN) and Long
+Short-Term Memory (LSTM) based approach for violence detection by learning the
+detailed features in the videos. CNN used for feature extraction while LSTM is used to classify the video, based on those features. 
+As a CNN feature extraction we use ResNet152V2 pre-trained model.
+
+The novelty of this project is synthesized data. In this project we focused on specific type of violence of adults against children. There are no available data sets match this situation and not enough relevant videos on the Internet, and the existing ones are very low quality. Thus, we decided to use reborn dolls which are very similar to real children.
+
+For the testing purpose we used videos which created under similar conditions as
+the videos from the training dataset. We have reached various classification
+accuracies up to 70% for “violent” frames of the tested videos. The results of the tests were relatively good, but only for those videos similar to the ones from the dataset. We need to improve the generalization and for this purpose, we have to
+increase the training dataset.
+
+Our main task is that the model will learn from the human movement only. To meet this target during each video session, we created videos containing both violent and non-violent movements. The rest of the parameters (background, clothes, distance etc.) remained the same.
+Another important goal is to achieve generalization. The trained model must learn to
+recognize humans (reborn dolls) on the video and classify their movement under
+different conditions: poses, clothes, gender, hairstyle etc. 
+
+After numerous experiments we came to the conclusion that in order to train the model so it can generalize well - there is a need for thousands of videos. The dataset must contain not only synthetically generated videos but also real ones. To continue this work, we need to increase the dataset. 
+
 
 **Project files:**<br/>
 * *settings.py*<br/>
@@ -46,5 +60,6 @@ path to the directory containing the tested video files. In the “main” funct
 ***lst = [i for i in range(1, 120 + 1)] <br/>
 testing(model, lst, False)*** <br/>
 uncommented. Open the development environment and run this file.<br/>
+The dataset presented in the repository has only several examples. The full dataset has about 8000 videos.<br/>
 
 See *"Final Project Presentation.pdf"* for the details.
