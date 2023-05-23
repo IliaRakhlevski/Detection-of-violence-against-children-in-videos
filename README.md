@@ -2,7 +2,7 @@
 ## AFEKA - Tel-Aviv Academic College Of Engineering<br/>Department: Intelligent Systems<br/>Course: Final project
 
 **Language:** Python 3.9 Libraries: keras/tensorflow, pandas, matplotlib, scikit-learn, numpy, opencv-python.<br/>
-**Deep learning models:** Convolution Neural Network (CNN), Residual Neural Network (ResNet) and Long Short-Term Memory (LSTM)<br/>
+**Deep learning models:** Convolution Neural Network (CNN), Residual Neural Network (ResNet) and Long Short-Term Memory (LSTM).<br/>
 **Development environments:** Spider 3.3.6, PyCharm 2021.3.1.<br/>
 **Cloud platforms:** Google Colaboratory, Kaggle.<br/>
 
