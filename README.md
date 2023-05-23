@@ -2,11 +2,12 @@
 ## AFEKA - Tel-Aviv Academic College Of Engineering<br/>Department: Intelligent Systems<br/>Course: Final project
 
 **Language:** Python 3.9 Libraries: keras/tensorflow, pandas, matplotlib, scikit-learn, numpy, opencv-python.<br/>
+**Deep learning models:** Convolution Neural Network (CNN), Residual Neural Network (ResNet) and Long Short-Term Memory (LSTM)<br/>
 **Development environments:** Spider 3.3.6, PyCharm 2021.3.1.<br/>
 **Cloud platforms:** Google Colaboratory, Kaggle.<br/>
 
 Violence against children is a world spread phenomenon - it occurs around the world, in every country and every society; 
-all too often it happens within the family and in many different forms suc as neglection, physical and sexual abuse etc. Violence against children can have dire consequences for the child's physical, emotional and psychosocial development. In this paper we focused on physical violence in kindergarten and its detection. When violence occurs in a Kindergarten it often remains unknown since the child either afraid to tell his parents about it or simply cannot speak yet due to his/her age.
+all too often it happens within the family and in many different forms such as neglection, physical and sexual abuse etc. Violence against children can have dire consequences for the child's physical, emotional and psychosocial development. In this paper we focused on physical violence in kindergarten and its detection. When violence occurs in a Kindergarten it often remains unknown since the child either afraid to tell his parents about it or simply cannot speak yet due to his/her age.
 
 This project proposes a physical violence detecting method based on indoor surveillance cameras. The cameras capture video streams, these streams are
 classified by using a deep-learning Convolution Neural Network (CNN) and Long Short-Term Memory (LSTM) based approach for violence detection by learning the
