@@ -19,7 +19,7 @@ The novelty of this project is synthesized data. In this project we focused on s
 
 For the testing purpose we used videos which created under similar conditions as
 the videos from the training dataset. We have reached various classification
-accuracies up to 70% for “violent” frames of the tested videos. The results of the tests were relatively good, but only for those videos similar to the ones from the dataset. We need to improve the generalization and for this purpose, we have to
+accuracies up to 86% for “violent” frames of the tested videos. The results of the tests were relatively good, but only for those videos similar to the ones from the dataset. We need to improve the generalization and for this purpose, we have to
 increase the training dataset.
 
 Our main task is that the model will learn from the human movement only. To meet this target during each video session, we created videos containing both violent and non-violent movements. The rest of the parameters (background, clothes, distance etc.) remained the same.
