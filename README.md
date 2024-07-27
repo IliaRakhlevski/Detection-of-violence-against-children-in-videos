@@ -27,8 +27,6 @@ Another important goal is to achieve generalization. The trained model must lear
 recognize humans (reborn dolls) on the video and classify their movement under
 different conditions: poses, clothes, gender, hairstyle etc. 
 
-After numerous experiments we came to the conclusion that in order to train the model so it can generalize well - there is a need for thousands of videos. The dataset must contain not only synthetically generated videos but also real ones. To continue this work, we need to increase the dataset. 
-
 
 **Project files:**<br/>
 * *settings.py*<br/>
