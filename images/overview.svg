@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="450" viewBox="0 0 1120 450" font-family="'Segoe UI', Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="aDark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker>
+  </defs>
+
+  <rect width="1120" height="450" fill="#f8fafc"/>
+
+  <!-- ============ Row 1: own dataset ============ -->
+  <text x="20" y="30" font-size="15" font-weight="700" fill="#475569">OWN DATASET · staged videos with reborn dolls · OpenCV</text>
+  <g fill="#ffffff" stroke="#1d4ed8" stroke-width="2">
+    <rect x="20" y="45" width="240" height="105" rx="12"/>
+    <rect x="300" y="45" width="240" height="105" rx="12"/>
+    <rect x="580" y="45" width="240" height="105" rx="12"/>
+    <rect x="860" y="45" width="240" height="105" rx="12"/>
+  </g>
+  <g text-anchor="middle">
+    <g font-size="19" font-weight="700" fill="#1e3a8a">
+      <text x="140" y="85">Video sessions</text>
+      <text x="420" y="85">20-frame clips</text>
+      <text x="700" y="85">Augmentation</text>
+      <text x="980" y="85">Preprocessing</text>
+    </g>
+    <g font-size="15" fill="#475569">
+      <text x="140" y="112">phone camera, 1080p 30 fps</text>
+      <text x="140" y="132">dolls instead of children</text>
+      <text x="420" y="112">~7,700 clips</text>
+      <text x="420" y="132">violence / no violence</text>
+      <text x="700" y="112">horizontal flip</text>
+      <text x="700" y="132">of selected clips</text>
+      <text x="980" y="112">224 × 224 frames</text>
+      <text x="980" y="132">pixels scaled to [-1, 1]</text>
+    </g>
+  </g>
+  <g stroke="#334155" stroke-width="2" marker-end="url(#aDark)">
+    <line x1="262" y1="97" x2="296" y2="97"/>
+    <line x1="542" y1="97" x2="576" y2="97"/>
+    <line x1="822" y1="97" x2="856" y2="97"/>
+  </g>
+  <text x="560" y="172" font-size="13" fill="#9a3412" text-anchor="middle">each session records both classes in the same scene: only the movement changes</text>
+
+  <!-- connector to row 2 -->
+  <path d="M980,152 L980,186 L185,186 L185,216" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#aDark)"/>
+
+  <!-- ============ Row 2: model ============ -->
+  <!-- CNN -->
+  <rect x="20" y="220" width="330" height="150" rx="12" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="185" y="252" font-size="22" font-weight="700" fill="#7c2d12" text-anchor="middle">ResNet152V2</text>
+  <text x="185" y="276" font-size="15" fill="#475569" text-anchor="middle">features of each frame</text>
+  <g font-family="Consolas, 'DejaVu Sans Mono', monospace" font-size="15" fill="#1e293b" text-anchor="middle">
+    <text x="185" y="308">ImageNet-pretrained, frozen</text>
+    <text x="185" y="330">TimeDistributed × 20 frames</text>
+    <text x="185" y="352">GlobalAveragePooling</text>
+  </g>
+
+  <!-- LSTM -->
+  <rect x="390" y="220" width="330" height="150" rx="12" fill="#ffffff" stroke="#15803d" stroke-width="2"/>
+  <text x="555" y="252" font-size="20" font-weight="700" fill="#14532d" text-anchor="middle">Bidirectional LSTM</text>
+  <text x="555" y="276" font-size="15" fill="#475569" text-anchor="middle">movement over the 20 frames</text>
+  <g font-family="Consolas, 'DejaVu Sans Mono', monospace" font-size="15" fill="#1e293b" text-anchor="middle">
+    <text x="555" y="308">4 units, L1/L2 regularization</text>
+    <text x="555" y="330">Dense 1 · sigmoid</text>
+    <text x="555" y="352">Keras / TensorFlow</text>
+  </g>
+
+  <!-- sliding window -->
+  <rect x="760" y="220" width="340" height="150" rx="12" fill="#ffffff" stroke="#6d28d9" stroke-width="2"/>
+  <text x="930" y="252" font-size="20" font-weight="700" fill="#5b21b6" text-anchor="middle">Long video</text>
+  <text x="930" y="276" font-size="15" fill="#475569" text-anchor="middle">sliding window: 20 frames, step 5</text>
+  <g font-size="16" font-weight="700" text-anchor="middle">
+    <rect x="785" y="300" width="140" height="44" rx="22" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.5"/>
+    <text x="855" y="328" fill="#b91c1c">Violence</text>
+    <rect x="935" y="300" width="140" height="44" rx="22" fill="#f5f3ff" stroke="#6d28d9" stroke-width="1.5"/>
+    <text x="1005" y="328" fill="#5b21b6">No violence</text>
+  </g>
+
+  <g stroke="#334155" stroke-width="2" marker-end="url(#aDark)">
+    <line x1="352" y1="295" x2="386" y2="295"/>
+    <line x1="722" y1="295" x2="756" y2="295"/>
+  </g>
+
+  <!-- ============ Results strip ============ -->
+  <rect x="20" y="392" width="1080" height="44" rx="12" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5"/>
+  <text x="560" y="420" font-size="16" fill="#1e293b" text-anchor="middle"><tspan font-weight="700">Python</tspan><tspan dx="12">test: 120 videos, 45,850 frames · violent frames detected 86% · non-violent frames correct 91%</tspan></text>
+</svg>
