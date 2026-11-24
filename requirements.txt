@@ -1,0 +1,16 @@
+# Python 3.9
+# Install: pip install -r requirements.txt
+#
+# The code uses the Keras 2 API (e.g. keras.layers.recurrent, keras.utils.vis_utils),
+# which was removed in Keras/TensorFlow 2.13, hence the upper bounds.
+tensorflow<2.13
+keras<2.13
+opencv-python
+imutils
+numpy
+pandas
+matplotlib
+scikit-learn
+psutil
+# Optional, only for plot_model() (model diagram): pydot + Graphviz installed on the system
+# pydot

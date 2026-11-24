@@ -2,7 +2,8 @@
 ## AFEKA - Tel-Aviv Academic College Of Engineering<br/>Department: Intelligent Systems<br/>Final project, M.Sc. in Intelligent Systems
 
 **Project Completion Date:** 2022<br/>
-**Language:** Python 3.9. Libraries: Keras/TensorFlow, pandas, matplotlib, scikit-learn, NumPy, OpenCV.<br/>
+**Language:** Python 3.9. Libraries: Keras/TensorFlow, pandas, matplotlib, scikit-learn, NumPy, OpenCV, imutils, psutil.<br/>
+**Installation:** `pip install -r requirements.txt` (full list with versions in [requirements.txt](requirements.txt)).<br/>
 **Deep learning models:** Convolutional Neural Network (ResNet152V2) and Bidirectional Long Short-Term Memory (biLSTM).<br/>
 **Development environments:** Spyder 3.3.6, PyCharm 2021.3.1.<br/>
 **Cloud platforms:** Google Colaboratory, Kaggle.<br/>
