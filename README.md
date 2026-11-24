@@ -1,7 +1,6 @@
 # Detection of violence against children in videos
-## AFEKA - Tel-Aviv Academic College Of Engineering<br/>Department: Intelligent Systems<br/>Final project, M.Sc. in Intelligent Systems
+*M.Sc. final project · Intelligent Systems · [Afeka Tel Aviv Academic College of Engineering](https://www.afeka.ac.il/) · 2022*
 
-**Project Completion Date:** 2022<br/>
 **Language:** Python 3.9. Libraries: Keras/TensorFlow, pandas, matplotlib, scikit-learn, NumPy, OpenCV, imutils, psutil.<br/>
 **Installation:** `pip install -r requirements.txt` (full list with versions in [requirements.txt](requirements.txt)).<br/>
 **Deep learning models:** Convolutional Neural Network (ResNet152V2) and Bidirectional Long Short-Term Memory (biLSTM).<br/>
